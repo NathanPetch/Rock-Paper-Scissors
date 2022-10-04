@@ -24,5 +24,11 @@ function playRound(playerSelection, computerSelection){
         return 'Computer has scissors. You Win'
     } else if(computerSelection === playerSelection.toLowerCase()){
         return 'Its a tie'
+    } else if(playerSelection !== ['rock', 'paper', 'scissors']){
+        return 'Please only type one of the three options'
     }
 }
+
+let playerSelection = prompt('Please type Paper, Rock or Scissors?', '' | null)
+let computerSelection = getComputerChoice()
+console.log(playRound(playerSelection, computerSelection))
