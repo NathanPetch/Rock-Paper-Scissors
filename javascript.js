@@ -11,24 +11,33 @@ Return string to player to alert if won or lost.
 */
 function playRound(playerSelection, computerSelection){
     if (playerSelection.toLowerCase() === 'rock' && computerSelection === 'paper'){
-        return 'Computer has paper. You Lose'
+        computerScoreCounter++
+        return 'Computer has paper. You Lose' 
     } else if( playerSelection.toLowerCase() === 'paper' && computerSelection === 'scissors'){
-        return 'Computer has scissors. You Lose'
+        computerScoreCounter++
+        return 'Computer has scissors. You Lose' 
     } else if (playerSelection.toLowerCase() === 'scissors' && computerSelection === 'rock'){
-        return 'Computer has rock. You Lose'
+        computerScoreCounter++
+        return 'Computer has rock. You Lose' 
     } else if (computerSelection === 'rock' && playerSelection.toLowerCase() === 'paper'){
-        return 'Computer has rock. You Win'
+        playerScoreCounter++
+        return 'Computer has rock. You Win' 
     } else if( computerSelection === 'paper' && playerSelection.toLowerCase() === 'scissors'){
-        return 'Computer has paper. You Win'
+        playerScoreCounter++
+        return 'Computer has paper. You Win' 
     } else if (computerSelection === 'scissors' && playerSelection.toLowerCase() === 'rock'){
-        return 'Computer has scissors. You Win'
+        playerScoreCounter++
+        return 'Computer has scissors. You Win' 
     } else if(computerSelection === playerSelection.toLowerCase()){
-        return 'Its a tie'
+        return 'Its a tie';
     } else if(playerSelection !== ['rock', 'paper', 'scissors']){
         return 'Please only type one of the three options'
     }
-}
+    }
 
+let playerScoreCounter = 0
+let computerScoreCounter = 0
 let playerSelection = prompt('Please type Paper, Rock or Scissors?', '' | null)
 let computerSelection = getComputerChoice()
 console.log(playRound(playerSelection, computerSelection))
+console.log(`The score is player ${playerScoreCounter} and computer ${computerScoreCounter}`)
