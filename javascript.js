@@ -8,6 +8,7 @@ return gameOptions[random];
 Gather player selection (case insensitive) and computers selection 
 Compare selections to determine the winner
 Return string to player to alert if won or lost.
+warns player if they type in something that is not one of three options
 */
 function playRound(playerSelection, computerSelection){
     if (playerSelection.toLowerCase() === 'rock' && computerSelection === 'paper'){
@@ -34,10 +35,23 @@ function playRound(playerSelection, computerSelection){
         return 'Please only type one of the three options'
     }
     }
-
+//logs player game score
 let playerScoreCounter = 0
+//logs computers game score
 let computerScoreCounter = 0
-let playerSelection = prompt('Please type Paper, Rock or Scissors?', '' | null)
-let computerSelection = getComputerChoice()
-console.log(playRound(playerSelection, computerSelection))
-console.log(`The score is player ${playerScoreCounter} and computer ${computerScoreCounter}`)
+//console.log(`The score is player ${playerScoreCounter} and computer ${computerScoreCounter}`)
+
+function game() {
+    let playerSelection = prompt('Please type Paper, Rock or Scissors?', '' | null)
+    let computerSelection = getComputerChoice()
+    return playRound(playerSelection, computerSelection) 
+    
+}
+/* Five rounds of the rock paper scissors is played, 
+the console logs the winner and what the current score is
+*/
+for(let i = 0; i < 5; i++){
+    console.log(game())
+    console.log(`The score is: YOU - ${playerScoreCounter} COMPUTER - ${computerScoreCounter}`)
+
+}
