@@ -47,11 +47,12 @@ function game() {
     return playRound(playerSelection, computerSelection) 
     
 }
-/* Five rounds of the rock paper scissors is played, 
-the console logs the winner and what the current score is
+/* first to five wins in rock paper scissors is played, 
+the console logs the winner of the round and what the current score is
 */
-for(let i = 0; i < 5; i++){
-    console.log(game())
-    console.log(`The score is: YOU - ${playerScoreCounter} COMPUTER - ${computerScoreCounter}`)
-
+  while (playerScoreCounter<2 || computerScoreCounter<2) {
+	  console.log(game())
+	    console.log(`The score is: YOU - ${playerScoreCounter} COMPUTER - ${computerScoreCounter}`)	
 }
+
+
