@@ -54,5 +54,10 @@ the console logs the winner of the round and what the current score is
 	  console.log(game())
 	    console.log(`The score is: YOU - ${playerScoreCounter} COMPUTER - ${computerScoreCounter}`)	
 }
+// alerts the that 5 wins have been achieved and gives congratulations or commiserations 
 
-
+if(computerScoreCounter===5){
+console.log('Unfortunate! The computer has beaten you to 5 wins')
+} else if (playerScoreCounter===5){
+    console.log('Congratulations! You have beaten the computer to 5 wins!')
+}
